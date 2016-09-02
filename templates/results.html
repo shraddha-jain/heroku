@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Earthquake Data!</title>
+  </head>
+  <body>
+    <body><align="center">
+	<br />
+	<br />
+	<h2 align='center'>Displaying the Earthquake Data</h2>
+	<br />
+	<form action="/back" align='center'>
+        <div><input type="submit" value="Back To Query Page" align='center' ></div>
+      </form>
+	  <br />
+	
+	<br />
+	<h2 align='center'>Query Fetch Time: {{ final_time }}</h2>
+	<br />
+      <table border="1" style="border: 1px solid black" align="center">
+        <tbody>
+          <tr>
+            <th width="35%" style="background-color: #CCFFCC; margin: 5px">Magnitude</th>
+            <th style="background-color: #CCFFCC; margin: 5px">Location</th>
+            <th style="background-color: #CCFFCC; margin: 5px">id</th>
+			
+          </tr>
+          {% for i in my_res %}
+             <tr>
+               <td>{{ i['mag'] }}</td>
+               <td>{{ i['loc'] }}</td>
+               <td>{{ i['id'] }}</td>
+             </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <br />
+  </body>
+</html>
